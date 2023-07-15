@@ -28,6 +28,7 @@ class ImageProcessor:
         name_label = tk.Label(root, text='By: Hassan Abid', font=('Arial', 12))
         name_label.pack(side='bottom', pady=10)
 
+
         self.header_label = tk.Label(self.root, text="Image Processor", font=("Arial", 24, "bold"), bg="gray30", fg="white")
         self.header_label.pack(pady=10, fill="x")
 
@@ -143,13 +144,17 @@ class ImageProcessor:
             messagebox.showerror("Error", "Invalid input for rotation angle")
             return
 
+        # If the image is grayscale, convert it back to a 3D numpy array.
+        if len(self.image.shape) == 2:
+            self.image = cv2.cvtColor(self.image, cv2.COLOR_GRAY2BGR)
+
         # Rotate the image and set the modified flag.
         rows, cols, _ = self.image.shape
         rotation_matrix = cv2.getRotationMatrix2D((cols/2, rows/2), angle, 1)
         self.image = cv2.warpAffine(self.image, rotation_matrix, (cols, rows))
         self.modified = True
         self.display_image()
-
+        
     # Save the image.
     def save_image(self):
         # If the image has been modified, save it.
