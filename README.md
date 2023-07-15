@@ -25,6 +25,10 @@ ImageProcessor is a Python class that creates a GUI application for basic image 
 
     Once you have created an instance of the ImageProcessor class, you can use the GUI to open and manipulate image files. The GUI has buttons and entry boxes       for each of the image processing operations, making it easy to perform basic image processing tasks.
     
+
+https://github.com/Hazabed/Image-Processor/assets/87940259/93b97e64-e1b2-43f9-a419-a05fcf2d9486
+
+
 #Contributing
 
     If you find a bug or have an idea for a new feature, please create an issue on the GitHub repository. Pull requests are also welcome!
